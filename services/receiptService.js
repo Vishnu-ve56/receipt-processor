@@ -27,7 +27,7 @@ const calculatePoints = (receipt) => {
 
   // Rule 2: 50 points if total is a round dollar amount (no cents)
   const total = parseFloat(receipt.total);
-  const isRoundDollar = total.toFixed(2) === parseInt(receipt.total).toString();
+  const isRoundDollar = total === Math.floor(total); // Check if total has no decimals
   if (isRoundDollar) {
     points += 50;
   }
@@ -56,11 +56,12 @@ const calculatePoints = (receipt) => {
   });
 
   // Rule 6: 6 points if the day in purchase date is odd
-  const purchaseDay = new Date(receipt.purchaseDate).getDate();
-  if (purchaseDay % 2 !== 0) {
+  const purchaseDay = new Date(Date.parse(receipt.purchaseDate)).getUTCDate();
+    if (purchaseDay % 2 !== 0) {
     points += 6;
-  }
-  console.log(`Rule 6: Purchase day "${purchaseDay}" is odd: ${purchaseDay % 2 !== 0 ? 'Yes' : 'No'}. Points: ${purchaseDay % 2 !== 0 ? 6 : 0}`);
+    }
+    console.log(`Rule 6: Purchase day "${purchaseDay}" is odd: ${purchaseDay % 2 !== 0 ? 'Yes' : 'No'}. Points: ${purchaseDay % 2 !== 0 ? 6 : 0}`);
+
 
   // Rule 7: 10 points if purchase time is between 2:00 PM and 4:00 PM
   const purchaseTime = parseInt(receipt.purchaseTime.split(':')[0]);
