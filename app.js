@@ -8,7 +8,6 @@ const receiptRoutes = require('./routes/receipts');
 
 app.use('/receipts', receiptRoutes);
 
-
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
