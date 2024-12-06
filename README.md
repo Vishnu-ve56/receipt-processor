@@ -62,3 +62,37 @@ The project is organized into a modular structure for clarity, scalability, and 
     node app.js
 
 4. The API will be running on http://localhost:3000
+
+
+## Running the Receipt Processor API with Docker
+
+## Prerequisites
+- Docker installed on your system ([Get Docker](https://docs.docker.com/get-docker/)).
+
+### Steps to Run the Application
+
+#### 1. Build the Docker Image
+Run the following command in the root directory of the project:
+
+   
+    docker build -t receipt-processor .
+
+#### 2. Run the Docker Container
+
+   
+    docker run -p 3000:3000 receipt-processor
+
+#### 3. Access the API
+
+    The application will be running on http://localhost:3000
+
+## Author
+
+This project was developed by:
+
+- **Vishnu Vinod Erapalli**  
+  [GitHub Profile](https://github.com/Vishnu-ve56)  
+  [LinkedIn Profile](https://www.linkedin.com/in/vishnu-erapalli01/)  
+  [Email](mailto:vishnuerapalli01@gmail.com)
+
+
