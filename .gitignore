@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+
+# npm package lock file (if you want to avoid version conflicts)
+package-lock.json
+
+# Environment variables (if you are using them)
+.env
